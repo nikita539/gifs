@@ -5,13 +5,15 @@ import {RootState} from "./store/store";
 import {getGifsAC} from "./store/gifs-reducer";
 import Gifs from "./components/gifsTable/gifs";
 import Searcher from "./components/searcher/searcher";
-const apiKey = "pium5ayLlX75gfIKmNYkuJx6DbczwilI"
+
+
 
 function App() {
 
     const gifs = useSelector<RootState,Array<any>>(state => state.gifs)
     const dispatch = useDispatch()
 
+    const apiKey = "pium5ayLlX75gfIKmNYkuJx6DbczwilI"
 
 
     const styles = {

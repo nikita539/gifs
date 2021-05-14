@@ -1,6 +1,5 @@
 import React, {ChangeEvent} from "react";
-import icon from "./search.svg"
-import logo from './../../logo.svg'
+
 
 type propsType = {
     onClick:(q:string) => void

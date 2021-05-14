@@ -12,6 +12,8 @@ function App() {
     const gifs = useSelector<RootState,Array<any>>(state => state.gifs)
     const dispatch = useDispatch()
 
+
+
     const styles = {
         stylesForDiv:{
             width:"100%",
@@ -22,15 +24,6 @@ function App() {
         }
     }
 
-    // useEffect(() => {
-    //     let response = fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=hello&limit=6`)
-    //         .then((res) => {
-    //             return res.json()
-    //         })
-    //         .then((value) => {
-    //             dispatch(getGifsAC(value.data))
-    //         })
-    // },[])
 
     const  responseOnServer =  async (valueForSearch:string) => {
 
@@ -48,12 +41,12 @@ function App() {
 
 
   return (
-    <div className="App">
-        <div style={styles.stylesForDiv}>
-            <Searcher onClick={responseOnServer}/>
-        </div>
-        <Gifs gifs={gifs}/>
-    </div>
+      <div className="App">
+            <div style={styles.stylesForDiv}>
+                <Searcher onClick={responseOnServer}/>
+            </div>
+            <Gifs gifs={gifs}/>
+      </div>
   );
 }
 

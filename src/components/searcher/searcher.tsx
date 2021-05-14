@@ -6,6 +6,13 @@ type propsType = {
     onClick:(q:string) => void
 }
 
+const styles = {
+    stylesForDiv: {
+        display:"flex",
+        width:"400px"
+    }
+}
+
 const Searcher = (
     {onClick}:propsType
 ) => {
@@ -22,7 +29,7 @@ const Searcher = (
         setValue("")
     }
 
-    return <div style={{display:"flex",width:"400px"}}>
+    return <div style={styles.stylesForDiv}>
 
         <div className="input-group mb-3">
             <input

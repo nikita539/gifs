@@ -1,4 +1,4 @@
-import {createStore,combineReducers} from 'redux'
+import {combineReducers} from 'redux'
 import {configureStore} from "@reduxjs/toolkit";
 import {gifsReducer} from "./gifs-reducer";
 

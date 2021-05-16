@@ -7,7 +7,6 @@ import Gifs from "./components/gifsTable/gifs";
 import Searcher from "./components/searcher/searcher";
 
 
-
 function App() {
 
     const gifs = useSelector<RootState,Array<any>>(state => state.gifs)
@@ -31,23 +30,31 @@ function App() {
 
         let q = valueForSearch.trim().toLowerCase()
 
-        let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${q}&limit=50`)
-            .then((res) => {
-                return res.json()
-            })
-            .then((value) => {
-                dispatch(getGifsAC(value.data))
-            })
+        if(q === ""){
+            alert("введи что-нибудь в строку,Бро")
+        }else{
+            let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${q}&limit=50`)
+                .then((res) => {
+                    return res.json()
+                })
+                .then((value) => {
+                    dispatch(getGifsAC(value.data))
+                }).catch(() => {
+                    alert("Что-то пошло не так,Сорян бро")
+                })
+        }
+
+
     }
 
 
 
   return (
       <div className="App">
-            <div style={styles.stylesForDiv}>
-                <Searcher onClick={responseOnServer}/>
-            </div>
-            <Gifs gifs={gifs}/>
+          <div style={styles.stylesForDiv}>
+              <Searcher onClick={responseOnServer}/>
+          </div>
+          <Gifs gifs={gifs}/>
       </div>
   );
 }

@@ -1,4 +1,5 @@
-import React, {ChangeEvent} from "react";
+import React, {ChangeEvent,useContext} from "react";
+import {context} from "../../store/context";
 
 
 type propsType = {
@@ -15,6 +16,7 @@ const styles = {
 const Searcher = (
     {onClick}:propsType
 ) => {
+
 
     // hooks
     let [value,setValue] = React.useState('')

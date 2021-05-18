@@ -30,7 +30,10 @@ const Gifs = (
             backgroundColor:"black"}}>
             {gifs.map((items) => {
                 return (
-                    <div key={items.id} style={style.stylesForDivOnReturn}>
+                    <div
+                        key={items.id} style={style.stylesForDivOnReturn}
+                        onClick={() => {alert("hello")}}
+                    >
                         <img src={items.images.fixed_height.url}/>
                     </div>
                 )
